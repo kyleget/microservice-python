@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  title: My Service
+  description: Example API Documentation
+  version: "0.0.1"
+host: myservice.getro.st
+schemes:
+  - https
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /things:
+    get:
+      summary: Things
+      description: |
+        The Things endpoint returns a bunch of things.
+      parameters:
+        - name: parameter1
+          in: query
+          description: Parameter goes here
+          required: true
+          type: number
+          format: double
+      tags:
+        - Things
+      responses:
+        200:
+          description: An array of Things
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Product'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string

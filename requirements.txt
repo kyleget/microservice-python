@@ -1,5 +1,4 @@
 Flask==0.10.1
-flask-swagger==0.2.11
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
